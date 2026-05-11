@@ -414,6 +414,70 @@
     font-size: 0.72rem; font-weight: 600; letter-spacing: 0.04em;
   }
 
+  /* ---------- Pricing USP-strip ---------- */
+  .pricing-usps {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    padding: 22px 24px;
+  }
+  @media (min-width: 700px) {
+    .pricing-usps { grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  }
+  .pricing-usp {
+    display: flex; align-items: flex-start; gap: 12px;
+    font-size: 0.92rem;
+  }
+  .pricing-usp svg { color: var(--accent); flex-shrink: 0; margin-top: 2px; }
+  .pricing-usp strong {
+    display: block; color: var(--ink); font-weight: 600; font-size: 0.95rem;
+  }
+  .pricing-usp span {
+    display: block; color: rgba(15, 58, 74, 0.65); font-size: 0.85rem; margin-top: 2px;
+  }
+
+  /* ---------- Add-ons ---------- */
+  .addons {
+    margin-top: 36px;
+    background: var(--paper);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--line);
+    padding: 28px;
+  }
+  .addons-head {
+    display: flex; align-items: baseline; justify-content: space-between;
+    flex-wrap: wrap; gap: 8px;
+    margin-bottom: 18px;
+  }
+  .addons-head h3 {
+    font-family: 'Fraunces', serif; font-size: 1.35rem; font-weight: 500;
+  }
+  .addons-head p {
+    color: rgba(15, 58, 74, 0.65); font-size: 0.88rem;
+  }
+  .addons-grid {
+    display: grid; gap: 14px;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 640px) { .addons-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .addons-grid { grid-template-columns: repeat(4, 1fr); } }
+  .addon {
+    display: flex; flex-direction: column; gap: 4px;
+    padding: 14px 16px;
+    background: var(--paper-2);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--line);
+  }
+  .addon-name { font-weight: 600; font-size: 0.95rem; }
+  .addon-price {
+    font-family: 'Fraunces', serif; font-size: 1.15rem; color: var(--accent);
+  }
+  .addon-note { font-size: 0.82rem; color: rgba(15, 58, 74, 0.6); }
+
   /* ---------- FAQ ---------- */
   .faq {
     background: var(--paper-2);
@@ -516,7 +580,7 @@
       <a href="#prijzen">Prijzen</a>
       <a href="#faq">FAQ</a>
     </div>
-    <a href="#boeken" class="btn btn-primary nav-cta">Plan ophaling <span class="arrow">→</span></a>
+    <a href="offerte.html" class="btn btn-primary nav-cta">Plan ophaling <span class="arrow">→</span></a>
     <button class="menu-btn" id="menuBtn" aria-label="Menu openen"><span></span></button>
   </div>
 </nav>
@@ -526,7 +590,7 @@
   <a href="#services" data-close>Services</a>
   <a href="#prijzen" data-close>Prijzen</a>
   <a href="#faq" data-close>FAQ</a>
-  <a href="#boeken" data-close>Plan ophaling →</a>
+  <a href="offerte.html" data-close>Plan ophaling →</a>
 </div>
 
 <!-- ===== HERO ===== -->
@@ -541,7 +605,7 @@
           en bezorgen het dezelfde dag weer thuis. Eén afspraak, één dag, één zorg minder.
         </p>
         <div class="hero-cta">
-          <a href="#boeken" class="btn btn-primary">Plan ophaling <span class="arrow">→</span></a>
+          <a href="offerte.html" class="btn btn-primary">Plan ophaling <span class="arrow">→</span></a>
           <a href="#hoe" class="btn btn-ghost">Hoe het werkt</a>
         </div>
         <div class="hero-meta">
@@ -764,13 +828,14 @@
         <span class="plan-tag">Los</span>
         <h3>Single Load</h3>
         <div class="plan-price">€24,<small>95</small></div>
-        <p style="margin-top: 6px; color: rgba(15, 58, 74, 0.6); font-size: 0.9rem;">per ophaling tot 8 kg</p>
+        <p style="margin-top: 6px; color: rgba(15, 58, 74, 0.6); font-size: 0.9rem;">tot 8 kg <span style="opacity:0.7;">(~1 volle wasmachine)</span></p>
         <ul>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Ophalen + bezorgen</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Ophalen + bezorgen inbegrepen</li>
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Wassen, drogen, vouwen</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Same-day terug</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Same-day terug (bij ophalen vóór 10:00)</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Plantaardige wasmiddelen</li>
         </ul>
-        <a href="#boeken" class="btn btn-ghost" style="width: 100%;">Plan eenmalige was</a>
+        <a href="offerte.html" class="btn btn-ghost" style="width: 100%;">Plan eenmalige was</a>
       </div>
 
       <div class="plan featured reveal">
@@ -778,29 +843,94 @@
         <span class="plan-tag">Wekelijks</span>
         <h3>Weekly Care</h3>
         <div class="plan-price">€19,<small>95</small></div>
-        <p style="margin-top: 6px; color: rgba(247, 243, 236, 0.6); font-size: 0.9rem;">per beurt — vast tijdslot</p>
+        <p style="margin-top: 6px; color: rgba(247, 243, 236, 0.6); font-size: 0.9rem;">per beurt — vast tijdslot <span style="opacity:0.75;">(bespaar €5 per beurt)</span></p>
         <ul>
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Alles in Single Load</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Vast wekelijks tijdslot</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Vast wekelijks tijdslot, vaste koerier</li>
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> 20% korting op extra's</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Pauzeer wanneer u wilt</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Pauzeer of stop wanneer u wilt</li>
         </ul>
-        <a href="#boeken" class="btn btn-accent" style="width: 100%;">Start abonnement</a>
+        <a href="offerte.html" class="btn btn-accent" style="width: 100%;">Start abonnement</a>
       </div>
 
       <div class="plan reveal">
         <span class="plan-tag">Premium</span>
         <h3>Full Care</h3>
         <div class="plan-price">€39,<small>95</small></div>
-        <p style="margin-top: 6px; color: rgba(15, 58, 74, 0.6); font-size: 0.9rem;">per ophaling incl. strijken</p>
+        <p style="margin-top: 6px; color: rgba(15, 58, 74, 0.6); font-size: 0.9rem;">per ophaling — strijken inbegrepen</p>
         <ul>
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Alles in Weekly Care</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Professioneel strijken</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Tot 5 stuks professioneel gestreken</li>
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Op hanger geleverd</li>
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Delicate stoffen inbegrepen</li>
         </ul>
-        <a href="#boeken" class="btn btn-ghost" style="width: 100%;">Kies Full Care</a>
+        <a href="offerte.html" class="btn btn-ghost" style="width: 100%;">Kies Full Care</a>
       </div>
+    </div>
+
+    <!-- USP strook onder pricing -->
+    <div class="pricing-usps reveal">
+      <div class="pricing-usp">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+        <div>
+          <strong>Geen minimumbesteding</strong>
+          <span>Wij komen ook voor één wasje</span>
+        </div>
+      </div>
+      <div class="pricing-usp">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+        <div>
+          <strong>Geen pickup-fee</strong>
+          <span>Halen en brengen is inbegrepen</span>
+        </div>
+      </div>
+      <div class="pricing-usp">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="10"/></svg>
+        <div>
+          <strong>Same-day standaard</strong>
+          <span>Op voor 10:00 = vandaag terug</span>
+        </div>
+      </div>
+      <div class="pricing-usp">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8 7 6 11 6 15a6 6 0 0 0 12 0c0-4-2-8-6-13z"/></svg>
+        <div>
+          <strong>Eco-middelen standaard</strong>
+          <span>Plantaardig, hypoallergeen</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add-on prijslijst -->
+    <div class="addons reveal">
+      <div class="addons-head">
+        <h3>Extra's — transparant geprijsd</h3>
+        <p>Per stuk, geen verrassingen achteraf</p>
+      </div>
+      <div class="addons-grid">
+        <div class="addon">
+          <div class="addon-name">Strijken</div>
+          <div class="addon-price">vanaf €2,50</div>
+          <div class="addon-note">per stuk — hemden, blouses, broeken</div>
+        </div>
+        <div class="addon">
+          <div class="addon-name">Stomerij</div>
+          <div class="addon-price">vanaf €5,00</div>
+          <div class="addon-note">per item — pakken, jurken, jassen</div>
+        </div>
+        <div class="addon">
+          <div class="addon-name">Beddengoed extra</div>
+          <div class="addon-price">€7,50</div>
+          <div class="addon-note">tweepersoons set — apart programma</div>
+        </div>
+        <div class="addon">
+          <div class="addon-name">Spoed-retour vóór 16:00</div>
+          <div class="addon-price">€6,00</div>
+          <div class="addon-note">eerder dan standaard 19:00</div>
+        </div>
+      </div>
+      <p style="margin-top: 18px; font-size: 0.85rem; color: rgba(15, 58, 74, 0.6);">
+        Weekly Care &amp; Full Care abonnees ontvangen automatisch 20% korting op alle extra's. Prijzen inclusief 21% btw.
+      </p>
     </div>
   </div>
 </section>
@@ -813,7 +943,7 @@
         <span class="eyebrow">FAQ</span>
         <h2 style="margin-top: 18px;">Antwoord op wat u zich afvraagt.</h2>
         <p>Staat uw vraag er niet bij? Stuur ons een berichtje — we reageren binnen een paar uur.</p>
-        <a href="#boeken" class="btn btn-primary" style="margin-top: 28px;">Stel uw vraag <span class="arrow">→</span></a>
+        <a href="offerte.html" class="btn btn-primary" style="margin-top: 28px;">Stel uw vraag <span class="arrow">→</span></a>
       </div>
 
       <div class="faq-list reveal">
@@ -858,7 +988,7 @@
     <span class="eyebrow">Klaar om te starten?</span>
     <h2 style="margin-top: 18px;">Eén afspraak, één dag,<br/><em>één zorg minder.</em></h2>
     <p>Plan nu uw eerste ophaling. Geen abonnement nodig, geen verplichtingen.</p>
-    <a href="mailto:hallo@lazydaysy.nl" class="btn btn-primary">Plan ophaling <span class="arrow">→</span></a>
+    <a href="offerte.html" class="btn btn-primary">Plan ophaling <span class="arrow">→</span></a>
   </div>
 </section>
 
