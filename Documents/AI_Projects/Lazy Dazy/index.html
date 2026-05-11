@@ -578,6 +578,7 @@
       <a href="#hoe">Hoe het werkt</a>
       <a href="#services">Services</a>
       <a href="#prijzen">Prijzen</a>
+      <a href="restaurants.html">Voor restaurants</a>
       <a href="#faq">FAQ</a>
     </div>
     <a href="offerte.html" class="btn btn-primary nav-cta">Plan ophaling <span class="arrow">→</span></a>
@@ -589,6 +590,7 @@
   <a href="#hoe" data-close>Hoe het werkt</a>
   <a href="#services" data-close>Services</a>
   <a href="#prijzen" data-close>Prijzen</a>
+  <a href="restaurants.html" data-close>Voor restaurants</a>
   <a href="#faq" data-close>FAQ</a>
   <a href="offerte.html" data-close>Plan ophaling →</a>
 </div>
@@ -814,6 +816,81 @@
   </div>
 </section>
 
+<!-- ===== B2B TEASER — RESTAURANTS ===== -->
+<section style="padding: 40px 0 80px;">
+  <div style="background: linear-gradient(135deg, var(--paper-2) 0%, var(--sand) 100%); border-radius: var(--radius-lg); padding: 56px 28px; margin: 0 20px; position: relative; overflow: hidden; max-width: 1140px;" class="b2b-teaser reveal">
+    <div style="position: absolute; top: -80px; right: -80px; width: 260px; height: 260px; border-radius: 50%; background: radial-gradient(circle, rgba(47, 143, 138, 0.18), transparent 70%); pointer-events: none;"></div>
+    <div style="position: relative; z-index: 1; display: grid; gap: 36px; grid-template-columns: 1fr;" class="b2b-grid">
+      <style>
+        @media (min-width: 980px) {
+          .b2b-teaser { padding: 72px 64px !important; margin: 0 auto !important; }
+          .b2b-grid { grid-template-columns: 1.1fr 1fr !important; gap: 56px !important; align-items: center; }
+        }
+        .b2b-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+        .b2b-pill {
+          padding: 7px 14px; border-radius: 999px;
+          background: var(--paper); border: 1px solid var(--line);
+          font-size: 0.86rem; font-weight: 500;
+          display: inline-flex; align-items: center; gap: 6px;
+        }
+        .b2b-stats {
+          display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
+        }
+        .b2b-stat {
+          background: var(--paper);
+          border: 1px solid var(--line);
+          border-radius: var(--radius-md);
+          padding: 22px 20px;
+        }
+        .b2b-stat-num {
+          font-family: 'Fraunces', serif; font-size: 2rem; font-weight: 500;
+          color: var(--accent); line-height: 1;
+        }
+        .b2b-stat-label {
+          margin-top: 10px; font-size: 0.85rem; color: rgba(15, 58, 74, 0.7); line-height: 1.4;
+        }
+      </style>
+      <div>
+        <span class="eyebrow" style="background: rgba(47, 143, 138, 0.12);">🍽️ Voor horeca</span>
+        <h2 style="margin-top: 16px;">Ook een <em>vaste wasdienst</em> voor uw restaurant.</h2>
+        <p style="margin-top: 18px; color: rgba(15, 58, 74, 0.75); font-size: 1.05rem; max-width: 480px;">
+          Tafellinnen, servetten, schorten en koksjassen. Lokaal in Rotterdam, transparant
+          per stuk geprijsd, en geen meerjarencontracten. Bestaande klanten van Napking
+          of Elis besparen gemiddeld 15-25%.
+        </p>
+        <div class="b2b-pills">
+          <span class="b2b-pill">✓ HACCP-conform</span>
+          <span class="b2b-pill">✓ 3 maanden opzegtermijn</span>
+          <span class="b2b-pill">✓ Vroege/late pickups</span>
+          <span class="b2b-pill">✓ Eén aanspreekpunt</span>
+        </div>
+        <div style="margin-top: 32px; display: flex; gap: 12px; flex-wrap: wrap;">
+          <a href="restaurants.html" class="btn btn-primary">Bekijk het aanbod <span class="arrow">→</span></a>
+          <a href="offerte.html?type=bedrijf" class="btn btn-ghost">Vraag B2B-offerte</a>
+        </div>
+      </div>
+      <div class="b2b-stats">
+        <div class="b2b-stat">
+          <div class="b2b-stat-num">−22%</div>
+          <div class="b2b-stat-label">Gem. besparing per tafelkleed vs. markt</div>
+        </div>
+        <div class="b2b-stat">
+          <div class="b2b-stat-num">€4,95</div>
+          <div class="b2b-stat-label">Tafelkleed 2m incl. strijken</div>
+        </div>
+        <div class="b2b-stat">
+          <div class="b2b-stat-num">€1,65</div>
+          <div class="b2b-stat-label">Stoffen servet — gevouwen</div>
+        </div>
+        <div class="b2b-stat">
+          <div class="b2b-stat-num">€0,95</div>
+          <div class="b2b-stat-label">Theedoek hygiënisch gewassen</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== PRICING ===== -->
 <section id="prijzen" class="how">
   <div class="container">
@@ -1013,12 +1090,12 @@
         </ul>
       </div>
       <div>
-        <h4>Bedrijf</h4>
+        <h4>Voor bedrijven</h4>
         <ul>
-          <li><a href="#">Over ons</a></li>
+          <li><a href="restaurants.html">Voor restaurants</a></li>
+          <li><a href="restaurants.html#prijzen">B2B-tarieven</a></li>
+          <li><a href="offerte.html?type=bedrijf">B2B-offerte</a></li>
           <li><a href="#">Werkgebied</a></li>
-          <li><a href="#">Reviews</a></li>
-          <li><a href="#">Werken bij</a></li>
         </ul>
       </div>
       <div>
