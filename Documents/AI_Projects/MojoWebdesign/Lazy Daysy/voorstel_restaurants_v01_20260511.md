@@ -36,7 +36,7 @@ LazyDaysy biedt restaurants in Rotterdam en regio een **lokale, transparant gepr
 | **Blycolin** | Lease tafellinnen | Brede assortimentskeuze, hotel-georiënteerd | Beperkte focus op kleine restaurants | Op aanvraag |
 | **Wasserij Juliana** | Wash Only + lease | Eerlijk geprijsd, publieke prijslijst | Beperkte schaal | Tafelkleed 2m €6,35, servet €2,10, theedoek €1,15 |
 | **CWS / Mewa** | Lease werkkleding industrieel | Sterk in werkkleding | Niet horeca-georiënteerd | Vanaf €4-7/medewerker/week |
-| **FreshFolds** | Wash Only horeca | Amsterdam-only | Niet actief in Rotterdam | Niet publiek |
+| **FreshFolds** | Wash Only horeca | Rotterdam-only | Niet actief in Rotterdam | Niet publiek |
 | **Lokale wasserettes** | Wash Only ad-hoc | Lage drempel | Geen logistiek, geen HACCP-papier | €3-5/kg algemeen |
 
 ### 2.2 Twee verdienmodellen — voor- en nadelen
@@ -470,7 +470,7 @@ Gemiddelde restaurant-klant: €750/maand × 30 maanden levensduur = **€22.500
 - [Wasserette Wintax Rotterdam](https://www.wasserette-wintax.nl/)
 - [Elis — beroepskleding wasservice](https://nl.elis.com/nl/oplossingen/bedrijfskleding/bedrijfskleding-wassen)
 - [Blycolin — tafellinnen verhuur](https://www.blycolin.com/nl/linnenverhuur/tafellinnen/)
-- [FreshFolds — horeca wasserij Amsterdam](https://www.freshfolds.nl/wasserij/)
+- [FreshFolds — horeca wasserij Rotterdam](https://www.freshfolds.nl/wasserij/)
 - [Wasserij Clean & White Rotterdam](https://www.wasserijclean-white.nl/wasserij-rotterdam)
 - [Textielservices Nederland — werkkleding wassen info](https://textielservices.nl/werkkleding-wassen-alle-info/)
 - [Maximum Image — werkkleding kosten](https://www.maximumimage.eu/blog/wat-zijn-de-kosten-van-werkkleding-onderhoud-en-reiniging/)
