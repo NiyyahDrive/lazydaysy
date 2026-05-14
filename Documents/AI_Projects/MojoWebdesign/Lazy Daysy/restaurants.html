@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0f3a4a" />
+<meta name="description" content="LazyDaysy voor restaurants — tafellinnen, servetten, werkkleding wassen. Lokaal in Rotterdam, transparant geprijsd, 15-25% goedkoper dan Napking/Elis." />
+<title>LazyDaysy voor Restaurants — Wasservice horeca Rotterdam</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --ink: #0f3a4a;
+    --ink-2: #143f51;
+    --paper: #f7f3ec;
+    --paper-2: #efe9df;
+    --sand: #e9dfd0;
+    --mist: #d8e6e7;
+    --accent: #2f8f8a;
+    --accent-soft: #b8dcd8;
+    --gold: #c8965a;
+    --line: rgba(15, 58, 74, 0.12);
+    --shadow-sm: 0 4px 16px rgba(15, 58, 74, 0.06);
+    --shadow-md: 0 12px 40px rgba(15, 58, 74, 0.10);
+    --shadow-lg: 0 24px 60px rgba(15, 58, 74, 0.14);
+    --radius-sm: 12px;
+    --radius-md: 20px;
+    --radius-lg: 32px;
+    --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+    --container: 1200px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4 { font-family: 'Fraunces', Georgia, serif; font-weight: 500; letter-spacing: -0.01em; line-height: 1.15; margin: 0; }
+  h1 { font-size: clamp(2.2rem, 6vw, 4rem); }
+  h2 { font-size: clamp(1.7rem, 4vw, 2.6rem); }
+  h3 { font-size: 1.2rem; }
+  p { margin: 0; }
+  a { color: inherit; text-decoration: none; }
+  .container { width: 100%; max-width: var(--container); margin: 0 auto; padding: 0 20px; }
+  @media (min-width: 768px) { .container { padding: 0 32px; } }
+
+  /* Nav */
+  .nav {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: saturate(140%) blur(14px);
+    -webkit-backdrop-filter: saturate(140%) blur(14px);
+    background: rgba(247, 243, 236, 0.78);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+  .logo {
+    display: flex; align-items: center; gap: 10px;
+    font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 600; letter-spacing: -0.02em;
+  }
+  .logo-img {
+    height: 48px; width: auto; display: block;
+  }
+  @media (max-width: 600px) { .logo-img { height: 40px; } }
+  .nav-links { display: none; gap: 28px; font-size: 0.93rem; font-weight: 500; }
+  .nav-links a { opacity: 0.75; transition: opacity 0.2s var(--ease); }
+  .nav-links a:hover, .nav-links a.active { opacity: 1; }
+  @media (min-width: 900px) { .nav-links { display: flex; } }
+  .nav-cta { display: none; }
+  @media (min-width: 900px) { .nav-cta { display: inline-flex; } }
+  .menu-btn {
+    width: 42px; height: 42px; border: 1px solid var(--line); border-radius: 50%;
+    background: transparent; cursor: pointer; display: grid; place-items: center;
+  }
+  @media (min-width: 900px) { .menu-btn { display: none; } }
+  .menu-btn span {
+    display: block; width: 16px; height: 1.5px; background: var(--ink); position: relative;
+  }
+  .menu-btn span::before, .menu-btn span::after {
+    content: ""; position: absolute; left: 0; right: 0; height: 1.5px; background: var(--ink);
+  }
+  .menu-btn span::before { top: -5px; }
+  .menu-btn span::after { top: 5px; }
+  .mobile-menu {
+    position: fixed; inset: 0; z-index: 40;
+    background: var(--paper);
+    transform: translateY(-100%);
+    transition: transform 0.4s var(--ease);
+    padding: 100px 24px 40px;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .mobile-menu.open { transform: translateY(0); }
+  .mobile-menu a {
+    font-family: 'Fraunces', serif; font-size: 2rem; padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 14px 22px; border-radius: 999px;
+    font-size: 0.95rem; font-weight: 500; cursor: pointer;
+    transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), background 0.25s var(--ease);
+    border: 1px solid transparent; white-space: nowrap;
+  }
+  .btn-primary { background: var(--ink); color: var(--paper); box-shadow: var(--shadow-sm); }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); background: var(--ink-2); }
+  .btn-ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+  .btn-ghost:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+  .btn-accent { background: var(--accent); color: white; }
+  .btn-accent:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); background: #267874; }
+  .btn .arrow { transition: transform 0.3s var(--ease); }
+  .btn:hover .arrow { transform: translateX(3px); }
+
+  /* Page hero */
+  .hero {
+    padding: 50px 0 70px;
+    position: relative; overflow: hidden;
+  }
+  @media (min-width: 900px) { .hero { padding: 80px 0 110px; } }
+  .hero-grid { display: grid; gap: 48px; grid-template-columns: 1fr; align-items: center; }
+  @media (min-width: 900px) { .hero-grid { grid-template-columns: 1.1fr 0.9fr; gap: 64px; } }
+
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 0.82rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.12em;
+    color: var(--accent); padding: 7px 14px; border-radius: 999px;
+    background: rgba(47, 143, 138, 0.1); margin-bottom: 22px;
+  }
+  .eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.3)} }
+  .hero h1 em { font-style: italic; font-weight: 400; color: var(--accent); }
+  .hero-lead {
+    margin-top: 24px; font-size: clamp(1rem, 1.4vw, 1.15rem); color: rgba(15, 58, 74, 0.75); max-width: 540px;
+  }
+  .hero-cta { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 12px; }
+  .hero-meta {
+    margin-top: 36px; display: flex; flex-wrap: wrap; gap: 18px 28px;
+    font-size: 0.88rem; color: rgba(15, 58, 74, 0.7);
+  }
+  .hero-meta div { display: flex; align-items: center; gap: 8px; }
+
+  /* Hero visual */
+  .hero-visual {
+    position: relative; aspect-ratio: 4/5;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(160deg, var(--ink) 0%, #1a4f63 100%);
+    overflow: hidden; box-shadow: var(--shadow-lg);
+    color: var(--paper);
+    padding: 32px;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .hero-visual::before {
+    content: ""; position: absolute; inset: 0;
+    background:
+      radial-gradient(circle at 80% 20%, rgba(184, 220, 216, 0.18), transparent 50%),
+      radial-gradient(circle at 15% 85%, rgba(200, 150, 90, 0.15), transparent 50%);
+    pointer-events: none;
+  }
+  .hero-visual > * { position: relative; z-index: 1; }
+  .stat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .stat {
+    padding: 16px 18px;
+    background: rgba(247, 243, 236, 0.08);
+    border: 1px solid rgba(247, 243, 236, 0.12);
+    border-radius: var(--radius-md);
+    backdrop-filter: blur(6px);
+  }
+  .stat-num {
+    font-family: 'Fraunces', serif; font-size: 1.9rem; font-weight: 500; color: var(--accent-soft);
+    line-height: 1;
+  }
+  .stat-label {
+    margin-top: 8px; font-size: 0.82rem; opacity: 0.75; line-height: 1.35;
+  }
+  .visual-caption {
+    font-family: 'Fraunces', serif; font-style: italic; font-size: 1.2rem; line-height: 1.4;
+    color: var(--accent-soft); max-width: 320px;
+  }
+  .visual-author { margin-top: 8px; font-size: 0.85rem; opacity: 0.7; }
+
+  /* Section base */
+  section { padding: 80px 0; }
+  @media (min-width: 900px) { section { padding: 100px 0; } }
+  .section-head { text-align: center; max-width: 720px; margin: 0 auto 56px; }
+  .section-head .eyebrow { margin-bottom: 16px; }
+  .section-head p { margin-top: 16px; color: rgba(15, 58, 74, 0.7); font-size: 1.05rem; }
+
+  /* What we wash */
+  .what-we-wash { background: var(--paper-2); }
+  .items-grid {
+    display: grid; gap: 18px; grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: 768px) { .items-grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (min-width: 1024px) { .items-grid { grid-template-columns: repeat(5, 1fr); } }
+  .item-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    padding: 22px 18px;
+    text-align: center;
+    transition: all 0.3s var(--ease);
+  }
+  .item-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-sm); }
+  .item-icon { font-size: 2.2rem; line-height: 1; }
+  .item-name {
+    margin-top: 12px; font-weight: 600; font-size: 0.98rem;
+  }
+  .item-desc {
+    margin-top: 6px; font-size: 0.85rem; color: rgba(15, 58, 74, 0.65);
+  }
+
+  /* Pricing table */
+  .pricing-section { background: var(--paper); }
+  .price-table-wrap {
+    background: var(--paper);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--line);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+  .price-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+  .price-table thead {
+    background: var(--paper-2);
+  }
+  .price-table th {
+    text-align: left; padding: 16px 20px;
+    font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.82rem;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    color: rgba(15, 58, 74, 0.65);
+    border-bottom: 1px solid var(--line);
+  }
+  .price-table td {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: middle;
+  }
+  .price-table tr:last-child td { border-bottom: none; }
+  .price-table tr:hover { background: rgba(184, 220, 216, 0.08); }
+  .price-table .price {
+    font-family: 'Fraunces', serif; font-size: 1.15rem; color: var(--ink); font-weight: 500;
+  }
+  .price-table .benchmark {
+    font-size: 0.83rem; color: rgba(15, 58, 74, 0.55);
+    text-decoration: line-through;
+  }
+  .price-table .saving {
+    font-size: 0.78rem; color: var(--accent); font-weight: 600;
+    background: rgba(47, 143, 138, 0.08);
+    padding: 3px 8px; border-radius: 999px;
+    display: inline-block; margin-top: 2px;
+  }
+  /* Stack on mobile */
+  @media (max-width: 640px) {
+    .price-table thead { display: none; }
+    .price-table, .price-table tbody, .price-table tr, .price-table td { display: block; width: 100%; }
+    .price-table tr {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      margin-bottom: 12px;
+      padding: 14px 16px;
+    }
+    .price-table td { border: none; padding: 6px 0; }
+    .price-table td::before {
+      content: attr(data-label) ": ";
+      font-weight: 600; font-size: 0.82rem;
+      text-transform: uppercase; letter-spacing: 0.06em;
+      color: rgba(15, 58, 74, 0.6);
+      margin-right: 8px;
+    }
+    .price-table td:first-child::before { display: none; }
+    .price-table td:first-child {
+      font-weight: 600; font-size: 1.05rem; margin-bottom: 4px;
+    }
+  }
+
+  .price-cols {
+    display: grid; gap: 28px; grid-template-columns: 1fr;
+  }
+  @media (min-width: 900px) { .price-cols { grid-template-columns: 1.6fr 1fr; gap: 32px; } }
+
+  /* Volume staffel */
+  .staffel-card {
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: var(--radius-md);
+    padding: 28px 24px;
+    height: fit-content;
+  }
+  .staffel-card h3 {
+    color: var(--paper); margin-bottom: 18px;
+  }
+  .staffel-row {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(247, 243, 236, 0.12);
+  }
+  .staffel-row:last-child { border-bottom: none; }
+  .staffel-volume { font-size: 0.92rem; opacity: 0.85; }
+  .staffel-disc {
+    font-family: 'Fraunces', serif; font-size: 1.3rem; color: var(--accent-soft); font-weight: 500;
+  }
+  .staffel-note {
+    margin-top: 18px; padding-top: 18px;
+    border-top: 1px solid rgba(247, 243, 236, 0.12);
+    font-size: 0.85rem; opacity: 0.7; line-height: 1.5;
+  }
+
+  /* Case examples */
+  .cases { background: var(--paper-2); }
+  .cases-grid {
+    display: grid; gap: 22px; grid-template-columns: 1fr;
+  }
+  @media (min-width: 768px) { .cases-grid { grid-template-columns: repeat(3, 1fr); } }
+  .case-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    padding: 28px 24px;
+    transition: all 0.3s var(--ease);
+    display: flex; flex-direction: column;
+  }
+  .case-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+  .case-tag {
+    font-size: 0.78rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--accent); margin-bottom: 12px;
+  }
+  .case-card h3 { margin-bottom: 10px; }
+  .case-meta {
+    font-size: 0.88rem; color: rgba(15, 58, 74, 0.65);
+    padding-bottom: 16px; margin-bottom: 16px;
+    border-bottom: 1px solid var(--line);
+  }
+  .case-rows { flex: 1; display: flex; flex-direction: column; gap: 8px; }
+  .case-row {
+    display: flex; justify-content: space-between; gap: 12px;
+    font-size: 0.9rem; color: rgba(15, 58, 74, 0.78);
+  }
+  .case-row span:last-child { font-weight: 600; color: var(--ink); }
+  .case-total {
+    margin-top: 16px; padding-top: 16px;
+    border-top: 1.5px solid var(--ink);
+  }
+  .case-total-line {
+    display: flex; justify-content: space-between; align-items: baseline;
+    margin-bottom: 4px;
+  }
+  .case-total-line:last-child { margin-bottom: 0; }
+  .case-total-label { font-size: 0.85rem; color: rgba(15, 58, 74, 0.65); }
+  .case-price {
+    font-family: 'Fraunces', serif; font-size: 1.6rem; color: var(--ink); font-weight: 500; line-height: 1;
+  }
+  .case-savings {
+    margin-top: 14px;
+    background: rgba(47, 143, 138, 0.08);
+    border-radius: var(--radius-sm);
+    padding: 12px 14px;
+    font-size: 0.85rem; color: var(--accent); font-weight: 600;
+  }
+
+  /* Why switch */
+  .why-switch {
+    background: var(--paper);
+  }
+  .why-grid {
+    display: grid; gap: 16px; grid-template-columns: 1fr;
+  }
+  @media (min-width: 768px) { .why-grid { grid-template-columns: 1fr 1fr; gap: 20px; } }
+  .why-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    display: flex; gap: 18px; align-items: flex-start;
+  }
+  .why-icon {
+    flex-shrink: 0;
+    width: 44px; height: 44px; border-radius: 12px;
+    background: var(--accent-soft); color: var(--accent);
+    display: grid; place-items: center;
+  }
+  .why-card h4 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1rem; }
+  .why-card p { margin-top: 6px; font-size: 0.92rem; color: rgba(15, 58, 74, 0.7); }
+
+  /* HACCP / process */
+  .process {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .process h2, .process .section-head p { color: var(--paper); }
+  .process .section-head p { opacity: 0.75; }
+  .process .eyebrow {
+    background: rgba(184, 220, 216, 0.15);
+    color: var(--accent-soft);
+  }
+  .steps-process {
+    display: grid; gap: 20px; grid-template-columns: 1fr;
+  }
+  @media (min-width: 768px) { .steps-process { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .steps-process { grid-template-columns: repeat(4, 1fr); } }
+  .process-step {
+    background: rgba(247, 243, 236, 0.05);
+    border: 1px solid rgba(247, 243, 236, 0.12);
+    border-radius: var(--radius-md);
+    padding: 24px;
+  }
+  .process-num {
+    font-family: 'Fraunces', serif; font-style: italic; font-size: 2.5rem; line-height: 1;
+    color: var(--accent-soft); opacity: 0.6;
+  }
+  .process-step h3 {
+    margin-top: 14px; color: var(--paper); font-size: 1.1rem;
+  }
+  .process-step p {
+    margin-top: 10px; font-size: 0.9rem; color: rgba(247, 243, 236, 0.7);
+  }
+
+  /* CTA block */
+  .cta-block {
+    text-align: center; padding: 100px 20px;
+    background:
+      radial-gradient(circle at 20% 30%, rgba(47, 143, 138, 0.12), transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(200, 150, 90, 0.1), transparent 50%),
+      var(--paper);
+  }
+  .cta-block h2 em { color: var(--accent); font-style: italic; font-weight: 400; }
+  .cta-block p { margin-top: 18px; max-width: 540px; margin-left: auto; margin-right: auto; color: rgba(15, 58, 74, 0.7); }
+  .cta-actions { margin-top: 32px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+  /* FAQ */
+  .faq-section { background: var(--paper-2); padding: 80px 0; }
+  @media (min-width: 768px) { .faq-section { padding: 100px 0; } }
+  .faq-grid { display: grid; grid-template-columns: 1fr; gap: 32px; }
+  @media (min-width: 900px) { .faq-grid { grid-template-columns: 1fr 1.6fr; gap: 60px; } }
+  .faq-intro h2 { color: var(--ink); }
+  .faq-intro p { margin-top: 14px; color: rgba(15, 58, 74, 0.7); }
+  .faq-list { display: flex; flex-direction: column; gap: 10px; }
+  .faq-item {
+    background: var(--paper); border-radius: var(--radius-sm);
+    border: 1px solid var(--line); overflow: hidden;
+  }
+  .faq-item summary {
+    padding: 18px 20px; cursor: pointer;
+    font-weight: 500; font-size: 0.98rem;
+    display: flex; justify-content: space-between; align-items: center;
+    list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: ""; width: 11px; height: 11px;
+    border-right: 1.5px solid var(--ink); border-bottom: 1.5px solid var(--ink);
+    transform: rotate(45deg); transition: transform 0.3s var(--ease);
+    margin-left: 12px; flex-shrink: 0;
+  }
+  .faq-item[open] summary::after { transform: rotate(-135deg); }
+  .faq-body { padding: 0 20px 20px; color: rgba(15, 58, 74, 0.72); font-size: 0.93rem; }
+
+  /* Footer */
+  footer { background: var(--ink); color: var(--paper); padding: 60px 0 30px; }
+  .footer-grid { display: grid; gap: 40px; grid-template-columns: 1fr; }
+  @media (min-width: 768px) { .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; } }
+  footer h4 {
+    font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.85rem;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--accent-soft); margin-bottom: 16px;
+  }
+  footer ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+  footer a { opacity: 0.7; transition: opacity 0.2s var(--ease); font-size: 0.93rem; }
+  footer a:hover { opacity: 1; }
+  footer p { color: rgba(247, 243, 236, 0.7); font-size: 0.93rem; margin-top: 14px; max-width: 320px; }
+  .footer-bottom {
+    margin-top: 50px; padding-top: 24px;
+    border-top: 1px solid rgba(247, 243, 236, 0.12);
+    display: flex; flex-wrap: wrap; gap: 16px;
+    justify-content: space-between; align-items: center;
+    font-size: 0.83rem; opacity: 0.6;
+  }
+
+  /* Reveal */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .reveal { opacity: 1; transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="logo">
+      <img src="lazydaysy-icon.png" alt="" class="logo-img">
+      LazyDaysy
+    </a>
+    <div class="nav-links">
+      <a href="index.html#hoe">Hoe het werkt</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#prijzen">Prijzen</a>
+      <a href="restaurants.html" class="active">Voor restaurants</a>
+      <a href="index.html#faq">FAQ</a>
+    </div>
+    <a href="offerte.html?type=bedrijf" class="btn btn-primary nav-cta">Vraag offerte <span class="arrow">→</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu openen"><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html#hoe" data-close>Hoe het werkt</a>
+  <a href="index.html#services" data-close>Services</a>
+  <a href="index.html#prijzen" data-close>Prijzen</a>
+  <a href="restaurants.html" data-close>Voor restaurants</a>
+  <a href="index.html#faq" data-close>FAQ</a>
+  <a href="offerte.html?type=bedrijf" data-close>Vraag offerte →</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-text reveal">
+        <span class="eyebrow"><span class="dot"></span> Wasservice voor horeca — Rotterdam</span>
+        <h1>De wasdienst die uw <em>service-tijd</em> respecteert.</h1>
+        <p class="hero-lead">
+          Tafellinnen, servetten, schorten en koksjassen — opgehaald vóór dienst,
+          schoon en gestreken terug. Lokaal in Rotterdam, transparant geprijsd,
+          geen meerjarencontract.
+        </p>
+        <div class="hero-cta">
+          <a href="offerte.html?type=bedrijf" class="btn btn-primary">Vraag offerte <span class="arrow">→</span></a>
+          <a href="#prijzen" class="btn btn-ghost">Bekijk tarieven</a>
+        </div>
+        <div class="hero-meta">
+          <div>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            15-25% goedkoper dan Napking/Elis
+          </div>
+          <div>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            HACCP-conforme procedures
+          </div>
+          <div>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="10"/></svg>
+            3 maanden opzegtermijn
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="stat-grid">
+          <div class="stat">
+            <div class="stat-num">−22%</div>
+            <div class="stat-label">Gem. besparing op tafellinnen vs. markt</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">2×/wk</div>
+            <div class="stat-label">Vaste ophaaldagen, vroeg of laat</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">€50</div>
+            <div class="stat-label">Minimum-pickup — geen €75-drempel</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">3 mnd</div>
+            <div class="stat-label">Opzegtermijn — niet 1-3 jaar</div>
+          </div>
+        </div>
+        <div>
+          <div class="visual-caption">"Vrijdagavond pickup, maandag-ochtend terug. Eindelijk een leverancier die mijn ritme snapt."</div>
+          <div class="visual-author">— Mark, brasserie-eigenaar (concept-quote)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== WAT WE WASSEN ===== -->
+<section class="what-we-wash">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Wat we wassen</span>
+      <h2>Alles wat in uw zaak vies wordt.</h2>
+      <p>Eén partner voor zaal, keuken én personeel — minder leveranciers, minder factuurloops.</p>
+    </div>
+
+    <div class="items-grid">
+      <div class="item-card reveal">
+        <div class="item-icon">🍽️</div>
+        <div class="item-name">Tafelkleden</div>
+        <div class="item-desc">Tot 2m en groter, geperst gestreken</div>
+      </div>
+      <div class="item-card reveal">
+        <div class="item-icon">🧻</div>
+        <div class="item-name">Stoffen servetten</div>
+        <div class="item-desc">Gevouwen, klaar voor dekken</div>
+      </div>
+      <div class="item-card reveal">
+        <div class="item-icon">👨‍🍳</div>
+        <div class="item-name">Koksjassen</div>
+        <div class="item-desc">90° gewassen, gestreken op hanger</div>
+      </div>
+      <div class="item-card reveal">
+        <div class="item-icon">🥖</div>
+        <div class="item-name">Schorten</div>
+        <div class="item-desc">Vlekverwijdering, vouw of hanger</div>
+      </div>
+      <div class="item-card reveal">
+        <div class="item-icon">🍳</div>
+        <div class="item-name">Theedoeken</div>
+        <div class="item-desc">Bulk per kg, hygiënisch gedroogd</div>
+      </div>
+      <div class="item-card reveal">
+        <div class="item-icon">🎉</div>
+        <div class="item-name">Lopers & placemats</div>
+        <div class="item-desc">Voor events of à-la-carte</div>
+      </div>
+      <div class="item-card reveal">
+        <div class="item-icon">🧽</div>
+        <div class="item-name">Microvezel</div>
+        <div class="item-desc">Apart batchen, geen pluisoverdracht</div>
+      </div>
+      <div class="item-card reveal">
+        <div class="item-icon">🧥</div>
+        <div class="item-name">Koksbroeken</div>
+        <div class="item-desc">Gevouwen, kreukvrij</div>
+      </div>
+      <div class="item-card reveal">
+        <div class="item-icon">🛏️</div>
+        <div class="item-name">B&B-linnen</div>
+        <div class="item-desc">Voor kleine hotels en B&B's</div>
+      </div>
+      <div class="item-card reveal">
+        <div class="item-icon">⚡</div>
+        <div class="item-name">Spoed-was</div>
+        <div class="item-desc">Vlek voor de dienst? Bel ons</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRIJZEN ===== -->
+<section class="pricing-section" id="prijzen">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Tarieven Wash Only</span>
+      <h2>Eerlijk geprijsd. Geen toeslagen.</h2>
+      <p>Per stuk of per kilo — wat past bij uw volume. Alle prijzen exclusief btw.</p>
+    </div>
+
+    <div class="price-cols">
+
+      <!-- Tabel per stuk -->
+      <div class="reveal">
+        <div class="price-table-wrap">
+          <table class="price-table">
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>LazyDaysy</th>
+                <th>Markt-benchmark</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Item">Tafelkleed tot 2m</td>
+                <td data-label="LazyDaysy"><span class="price">€4,95</span><br/><span class="saving">-22%</span></td>
+                <td data-label="Markt"><span class="benchmark">€6,35</span></td>
+              </tr>
+              <tr>
+                <td data-label="Item">Per extra meter tafelkleed</td>
+                <td data-label="LazyDaysy"><span class="price">€3,25</span><br/><span class="saving">-24%</span></td>
+                <td data-label="Markt"><span class="benchmark">€4,30</span></td>
+              </tr>
+              <tr>
+                <td data-label="Item">Loper / placemat</td>
+                <td data-label="LazyDaysy"><span class="price">€3,25</span><br/><span class="saving">-24%</span></td>
+                <td data-label="Markt"><span class="benchmark">€4,30</span></td>
+              </tr>
+              <tr>
+                <td data-label="Item">Stoffen servet</td>
+                <td data-label="LazyDaysy"><span class="price">€1,65</span><br/><span class="saving">-21%</span></td>
+                <td data-label="Markt"><span class="benchmark">€2,10</span></td>
+              </tr>
+              <tr>
+                <td data-label="Item">Theedoek</td>
+                <td data-label="LazyDaysy"><span class="price">€0,95</span><br/><span class="saving">-17%</span></td>
+                <td data-label="Markt"><span class="benchmark">€1,15</span></td>
+              </tr>
+              <tr>
+                <td data-label="Item">Werkschort (kort)</td>
+                <td data-label="LazyDaysy"><span class="price">€2,50</span></td>
+                <td data-label="Markt">—</td>
+              </tr>
+              <tr>
+                <td data-label="Item">Werkschort (lang)</td>
+                <td data-label="LazyDaysy"><span class="price">€3,25</span></td>
+                <td data-label="Markt">—</td>
+              </tr>
+              <tr>
+                <td data-label="Item">Koksjas</td>
+                <td data-label="LazyDaysy"><span class="price">€3,95</span></td>
+                <td data-label="Markt">—</td>
+              </tr>
+              <tr>
+                <td data-label="Item">Koksbroek</td>
+                <td data-label="LazyDaysy"><span class="price">€2,95</span></td>
+                <td data-label="Markt">—</td>
+              </tr>
+              <tr>
+                <td data-label="Item">Microvezeldoek</td>
+                <td data-label="LazyDaysy"><span class="price">€0,75</span></td>
+                <td data-label="Markt">—</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="margin-top: 14px; font-size: 0.85rem; color: rgba(15, 58, 74, 0.6);">
+          Benchmark op basis van publieke prijslijst Wasserij Juliana, januari 2026. Napking/Elis-prijzen niet publiek — eigen geschatte vergelijking op aanvraag.
+        </p>
+      </div>
+
+      <!-- Volume staffel -->
+      <div class="reveal">
+        <div class="staffel-card">
+          <h3>Volume-staffel</h3>
+          <div class="staffel-row">
+            <div class="staffel-volume">&lt; €100 / week</div>
+            <div class="staffel-disc">standaard</div>
+          </div>
+          <div class="staffel-row">
+            <div class="staffel-volume">€100 – €250 / week</div>
+            <div class="staffel-disc">−8%</div>
+          </div>
+          <div class="staffel-row">
+            <div class="staffel-volume">€250 – €500 / week</div>
+            <div class="staffel-disc">−12%</div>
+          </div>
+          <div class="staffel-row">
+            <div class="staffel-volume">&gt; €500 / week</div>
+            <div class="staffel-disc">−18%</div>
+          </div>
+          <div class="staffel-note">
+            <strong style="color: var(--accent-soft);">+ jaarcontract:</strong> extra −5%<br/>
+            <strong style="color: var(--accent-soft);">+ referral-bonus:</strong> 50% korting eerste maand<br/>
+            <strong style="color: var(--accent-soft);">Per kg theedoeken/bulk:</strong> €5,95/kg (zakt naar €4,95 vanaf 50 kg/week)
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== CASE EXAMPLES ===== -->
+<section class="cases">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Voorbeeldberekeningen</span>
+      <h2>Wat kost dit concreet?</h2>
+      <p>Drie realistische scenario's — voor uw eigen situatie maken we een offerte op maat.</p>
+    </div>
+
+    <div class="cases-grid">
+
+      <!-- Case 1 -->
+      <div class="case-card reveal">
+        <span class="case-tag">Bistro</span>
+        <h3>40 couverts — Kralingen</h3>
+        <div class="case-meta">Casual buurtrestaurant, lunch + diner, di-zo</div>
+        <div class="case-rows">
+          <div class="case-row"><span>200 servetten</span><span>€330,00</span></div>
+          <div class="case-row"><span>35 theedoeken</span><span>€33,25</span></div>
+          <div class="case-row"><span>14 schorten</span><span>€35,00</span></div>
+          <div class="case-row"><span>6 koksjassen</span><span>€23,70</span></div>
+          <div class="case-row"><span>Volume-korting −12%</span><span>−€50,63</span></div>
+        </div>
+        <div class="case-total">
+          <div class="case-total-line"><span class="case-total-label">Per week (excl. btw)</span><span class="case-price">€371</span></div>
+          <div class="case-total-line"><span class="case-total-label">Per maand</span><span style="font-weight:600">€1.485</span></div>
+        </div>
+        <div class="case-savings">↓ Bespaar ~€3.000-€5.700/jaar t.o.v. Napking</div>
+      </div>
+
+      <!-- Case 2 -->
+      <div class="case-card reveal" style="border-color: var(--accent); box-shadow: 0 0 0 3px rgba(47, 143, 138, 0.08);">
+        <span class="case-tag">Brasserie</span>
+        <h3>75 couverts — Centrum</h3>
+        <div class="case-meta">Hoogwaardige brasserie, ma-za, vol stoffen-pakket</div>
+        <div class="case-rows">
+          <div class="case-row"><span>60 tafelkleden</span><span>€297,00</span></div>
+          <div class="case-row"><span>450 servetten</span><span>€742,50</span></div>
+          <div class="case-row"><span>50 theedoeken</span><span>€47,50</span></div>
+          <div class="case-row"><span>24 schorten + 14 koksjassen</span><span>€115,30</span></div>
+          <div class="case-row"><span>8 koksbroeken</span><span>€23,60</span></div>
+          <div class="case-row"><span>Volume-korting −18% + jaar −5%</span><span>−€270,92</span></div>
+        </div>
+        <div class="case-total">
+          <div class="case-total-line"><span class="case-total-label">Per week (excl. btw)</span><span class="case-price">€955</span></div>
+          <div class="case-total-line"><span class="case-total-label">Per maand</span><span style="font-weight:600">€3.820</span></div>
+        </div>
+        <div class="case-savings">↓ Bespaar ~€18.000-€28.000/jaar</div>
+      </div>
+
+      <!-- Case 3 -->
+      <div class="case-card reveal">
+        <span class="case-tag">Koffiezaak</span>
+        <h3>25 couverts — Kop van Zuid</h3>
+        <div class="case-meta">Koffie + lunch, di-za, geen tafellinnen</div>
+        <div class="case-rows">
+          <div class="case-row"><span>25 theedoeken</span><span>€23,75</span></div>
+          <div class="case-row"><span>8 schorten</span><span>€20,00</span></div>
+          <div class="case-row"><span>12 microvezeldoeken</span><span>€9,00</span></div>
+          <div class="case-row" style="opacity:0.55"><span>Geen volumekorting</span><span>—</span></div>
+        </div>
+        <div class="case-total">
+          <div class="case-total-line"><span class="case-total-label">Per week (excl. btw)</span><span class="case-price">€53</span></div>
+          <div class="case-total-line"><span class="case-total-label">Per maand</span><span style="font-weight:600">€211</span></div>
+        </div>
+        <div class="case-savings">↓ Eén partner voor klein én groot — geen minimum €75 zoals Wintax</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY SWITCH ===== -->
+<section class="why-switch">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Waarom switchen</span>
+      <h2>Wat anders aan LazyDaysy?</h2>
+      <p>Niet de grootste. De meest aanwezige.</p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="10"/></svg>
+        </div>
+        <div>
+          <h4>3 maanden opzegtermijn</h4>
+          <p>Napking en Elis hanteren standaard 1-3 jaar. Bij ons proeft u eerst — daarna beslist u.</p>
+        </div>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6M23 11h-6"/></svg>
+        </div>
+        <div>
+          <h4>Eén aanspreekpunt</h4>
+          <p>Geen accountmanager-loop. U belt Mojo of Hakim direct. Antwoord binnen het uur op werkdagen.</p>
+        </div>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+        </div>
+        <div>
+          <h4>Lokaal eigenaarschap</h4>
+          <p>Geen factuurfee voor Londen-hoofdkantoor. Het geld blijft in Rotterdam, beslissingen ook.</p>
+        </div>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg>
+        </div>
+        <div>
+          <h4>Vlek niet weg, geen betaling</h4>
+          <p>Lukt het niet de vlek eruit te krijgen? Dan tellen we dat stuk niet mee op de factuur. Helder.</p>
+        </div>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+        </div>
+        <div>
+          <h4>HACCP-conforme procedures</h4>
+          <p>Aparte was-batches voor keukentextiel, logboek per beurt, beschikbaar voor inspectie.</p>
+        </div>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <div>
+          <h4>Vroege of late pickups</h4>
+          <p>7:00 vóór dienst of 22:30 na sluit. Wij draaien om uw schema, niet andersom.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROCESS ===== -->
+<section class="process">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Werkwijze</span>
+      <h2>Vier stappen — geen verrassingen.</h2>
+      <p>Van eerste belletje tot wekelijkse routine in twee weken.</p>
+    </div>
+
+    <div class="steps-process">
+      <div class="process-step reveal">
+        <div class="process-num">01</div>
+        <h3>Bezoek &amp; quote</h3>
+        <p>We komen langs, zien uw textielvolume, en sturen binnen 24u een offerte op maat.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="process-num">02</div>
+        <h3>Proefweek gratis</h3>
+        <p>Eén volledige week service — geen verplichting. U beoordeelt kwaliteit en timing zelf.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="process-num">03</div>
+        <h3>Vast schema</h3>
+        <p>1-3 vaste ophaaldagen per week. Vroeg vóór dienst of laat na sluit — u kiest.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="process-num">04</div>
+        <h3>Maandfactuur</h3>
+        <p>BTW-conforme factuur, alles per stuk gespecificeerd. Logboek op aanvraag voor NVWA.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq-section">
+  <div class="container">
+    <div class="faq-grid">
+      <div class="faq-intro reveal">
+        <span class="eyebrow">Vragen</span>
+        <h2>Wat restauranthouders vragen.</h2>
+        <p>Niet de juiste vraag erbij? Stuur Mojo direct een WhatsApp.</p>
+        <a href="offerte.html?type=bedrijf" class="btn btn-primary" style="margin-top: 28px;">Vraag offerte <span class="arrow">→</span></a>
+      </div>
+
+      <div class="faq-list reveal">
+        <details class="faq-item" open>
+          <summary>Hebben jullie HACCP-certificering?</summary>
+          <div class="faq-body">We werken volgens HACCP-conforme procedures: aparte batches voor keukentextiel, gecontroleerde wastemperaturen, logboek per beurt. Bij grotere keukens met externe audit (NVWA): wij leveren de logboek-data aan.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Hoe snel kan ik starten?</summary>
+          <div class="faq-body">Binnen 7 werkdagen na akkoord. Eerste week is gratis proef, geen contract. Bij vaste klant: tweede week ondertekening + start vast schema.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Werken jullie ook bij hotels of B&amp;B's?</summary>
+          <div class="faq-body">Ja. Voor kleine en mid-size B&amp;B's (1-15 kamers) bieden we bedlinnen en handdoeken in dezelfde flow. Grote hotelketens vallen buiten onze huidige capaciteit.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Wat als textiel beschadigd raakt?</summary>
+          <div class="faq-body">Onze polis dekt schade tot €500 per pickup, hoger op aanvraag. Bij meningsverschil: foto van het stuk vóór ophaling = bewijs. We zijn transparant — geen "kleine lettertjes"-routine.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Kunnen we tafellinnen huren in plaats van onze eigen gebruiken?</summary>
+          <div class="faq-body">Vanaf jaar 2 introduceren we Lease &amp; Wash met eigen voorraad. Tot dan: u gebruikt eigen textiel — vaak goedkoper en u behoudt eigen design.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Hoe gaat het met facturatie?</summary>
+          <div class="faq-body">Maandelijks per e-mail, btw-conform met alle vereiste vermeldingen. Per stuk gespecificeerd. Eerste 3 maanden vooruitbetaling per week, daarna 14-dagen-factuur.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Wat als ik een spoedvraag heb tijdens diensttijd?</summary>
+          <div class="faq-body">WhatsApp Business-nummer beschikbaar 7 dagen per week, 8:00-23:00. Acute vlek? We sturen iemand met een schoon vervangstuk binnen 90 minuten in Rotterdam-centrum.</div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-block reveal">
+  <div class="container">
+    <span class="eyebrow">Klaar voor de switch?</span>
+    <h2 style="margin-top: 18px;">Eén partner, één factuur,<br/><em>geen contractval.</em></h2>
+    <p>Vraag een offerte op maat. Wij komen langs, kijken naar uw textiel-volume, en reageren binnen 24 uur.</p>
+    <div class="cta-actions">
+      <a href="offerte.html?type=bedrijf" class="btn btn-primary">Vraag offerte <span class="arrow">→</span></a>
+      <a href="https://wa.me/31000000000?text=Hallo%20LazyDaysy,%20ik%20heb%20een%20restaurant%20en%20wil%20een%20offerte" class="btn btn-ghost" target="_blank" rel="noopener">💬 WhatsApp Mojo</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="logo" style="color: var(--paper);">
+          <img src="lazydaysy-icon.png" alt="" class="logo-img">
+          LazyDaysy
+        </a>
+        <p>Professionele wasservice aan huis én voor restaurants in Rotterdam. Uw was, onze zorg.</p>
+      </div>
+      <div>
+        <h4>Particulier</h4>
+        <ul>
+          <li><a href="index.html#hoe">Hoe het werkt</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#prijzen">Prijzen</a></li>
+          <li><a href="offerte.html">Offerte</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Voor bedrijven</h4>
+        <ul>
+          <li><a href="restaurants.html">Voor restaurants</a></li>
+          <li><a href="restaurants.html#prijzen">B2B-tarieven</a></li>
+          <li><a href="offerte.html?type=bedrijf">B2B-offerte</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:hallo@lazydaysy.nl">hallo@lazydaysy.nl</a></li>
+          <li><a href="tel:+31000000000">+31 (0)20 000 0000</a></li>
+          <li><a href="https://wa.me/31000000000" target="_blank" rel="noopener">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 LazyDaysy. Alle rechten voorbehouden.</span>
+      <span><a href="#">Privacy</a> · <a href="#">Algemene voorwaarden</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  mobileMenu.querySelectorAll('[data-close]').forEach(a =>
+    a.addEventListener('click', () => mobileMenu.classList.remove('open'))
+  );
+
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
