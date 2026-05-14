@@ -1,11 +1,11 @@
-name: Deploy Lazy Dazy to Pages
+name: Deploy LazyDaysy to Pages
 
 on:
   push:
     branches:
       - main
     paths:
-      - "Documents/AI_Projects/Lazy Dazy/**"
+      - "Documents/AI_Projects/MojoWebdesign/Lazy Daysy/**"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
 
@@ -31,7 +31,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "Documents/AI_Projects/Lazy Dazy"
+          path: "Documents/AI_Projects/MojoWebdesign/Lazy Daysy"
 
   deploy:
     environment:
