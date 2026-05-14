@@ -209,7 +209,7 @@ Dit is de ruimte waarin LazyDaysy zich positioneert.
 | 50% éénpersoonshuishoudens RTM | Energieprijzen volatiel |
 | Eco-trend versterkt premium-positie | Laundryheap kan agressief pricen |
 | B2B-instroom (Airbnb, fitness, restaurants) | Tekort aan koeriers met B-rijbewijs |
-| Uitbreiding Den Haag/Amsterdam jaar 2-3 | Zero-emissiezone vereist EV-wagen |
+| Uitbreiding Den Haag/Rotterdam jaar 2-3 | Zero-emissiezone vereist EV-wagen |
 
 ---
 
@@ -596,7 +596,7 @@ Belangrijkste risico is jaar 1 cashflow: investering + 9-12 maanden break-even-a
 
 ### Maand 25-36 — Multi-stad
 - Den Haag operationeel
-- Amsterdam verkenning of franchise-model
+- Rotterdam verkenning of franchise-model
 - 700+ actieve abonnees totaal
 
 ---
@@ -677,7 +677,7 @@ Marktonderzoek gebaseerd op:
 - [Online On-Demand Laundry Market Size 2025 — Custommarketinsights.com](https://www.custommarketinsights.com/report/online-on-demand-laundry-service-market/)
 - [On-Demand Laundry Service Market 2025-2035 — FutureMarketInsights.com](https://www.futuremarketinsights.com/reports/on-demand-laundry-service-market)
 - [Europe Online Laundry Service Market — GrandViewResearch.com](https://www.grandviewresearch.com/horizon/outlook/online-laundry-service-market/europe)
-- [Laundryheap pricing Amsterdam — Laundryheap.com](https://www.laundryheap.com/en-nl/pricing)
+- [Laundryheap pricing Rotterdam — Laundryheap.com](https://www.laundryheap.com/en-nl/pricing)
 - [Wasserij service Rotterdam — Laundryheap.com](https://www.laundryheap.com/nl-nl/laundry/rotterdam)
 - [Stomerij Rotterdam — dobbi.com](https://dobbi.com/stomerij-wasserette-rotterdam/)
 - [Wasservice aan huis Rotterdam — LaundryKings.nl](https://www.laundrykings.nl/wasservice-aan-huis/)
